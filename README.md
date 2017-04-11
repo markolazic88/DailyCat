@@ -1,0 +1,12 @@
+# DailyCat
+High performance image gallery app implemented in Xamarin Forms
+
+# Features
+- Tinder-style SwipeCardView ([NuGet](www.nuget.org/packages/MLToolkit.Forms.SwipeCardView/), [GitHub](github.com/markolazic88/SwipeCardView))
+- Instagram-style ListView i GridView
+- Notifikacije korišćenjem Google FCM (Firebase Cloud Messaging) i Azure Functions
+- Native Look & Feel (Android and iOS)
+
+<img alt="" src="http://i68.tinypic.com/2h5psw9.png"  width="200px" /> <img alt="" src="http://i66.tinypic.com/2nh2lp4.png" width="200px"/> <img alt="" src="http://i66.tinypic.com/m79ea.png" width="200px" />
+
+<img alt="" src="http://i68.tinypic.com/ngbtdu.png"  width="200px" /> <img alt="" src="http://i65.tinypic.com/2e4g1vn.png" width="200px" /> <img alt="" src="http://i68.tinypic.com/18zr7b.png" width="200px" />
