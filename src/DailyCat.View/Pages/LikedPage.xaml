@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:converters="clr-namespace:DailyCat.View.Converters;assembly=DailyCat.View"
+             xmlns:resources="clr-namespace:DailyCat.View.Resources;assembly=DailyCat.View"
+             xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
+             x:Class="DailyCat.View.Pages.LikedPage"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=LikedPageViewModel}"
+             Title="Liked">
+
+    <pages:BaseContentPage.Icon >
+    </pages:BaseContentPage.Icon>
+
+    <pages:BaseContentPage.ToolbarItems>
+        <ToolbarItem Icon="{x:Static resources:Images.Settings}" Order="Primary" Command="{Binding SettingsCommand}"></ToolbarItem>
+    </pages:BaseContentPage.ToolbarItems>
+
+    <pages:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+        </ResourceDictionary>
+    </pages:BaseContentPage.Resources>
+
+    <StackLayout>
+        <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+            ItemsSource="{Binding LikedCats}"
+            RowHeight="350"
+            IsVisible="{Binding IsGrid, Converter={StaticResource InvertBooleanConverter}}" >
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Source="{Binding ImageSource}" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Image>
+                                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                                    <Image Source="{x:Static resources:Images.Dislike}" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"></Image>
+                                    <Label Text="{Binding DislikeCount}" FontSize="20" VerticalOptions="Center"></Label>
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                                    <Image Source="{x:Static resources:Images.Like}" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"></Image>
+                                    <Label Text="{Binding LikeCount}" FontSize="20" VerticalOptions="Center"></Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <controls:FlowListView FlowColumnCount="3" SeparatorVisibility="Default" HasUnevenRows="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+        FlowItemsSource="{Binding LikedCats}"
+        RowHeight="120"
+        IsVisible="{Binding IsGrid}"
+        FlowItemTappedCommand="{Binding GridItemTappedCommand}"
+        FlowLastTappedItem="{Binding GridLastTappedItem}">
+            <x:Arguments>
+                <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+            </x:Arguments>
+            <controls:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding ImageSource}" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="1"></Image>
+                </DataTemplate>
+            </controls:FlowListView.FlowColumnTemplate>
+
+        </controls:FlowListView>
+
+        <StackLayout Orientation="Horizontal" Padding="10" Spacing="10" HorizontalOptions="Center">
+            <Label Text="List" VerticalTextAlignment="Center" FontSize="16"></Label>
+            <Switch IsToggled="{Binding IsGrid}"></Switch>
+            <Label Text="Grid" VerticalTextAlignment="Center" FontSize="16"></Label>
+        </StackLayout>
+    </StackLayout>
+</pages:BaseContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
+             x:Class="DailyCat.View.Pages.SettingsPage"
+             Title="Settings"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=SettingsPageViewModel}">
+    <StackLayout>
+        <Frame>
+        <StackLayout>
+            <Label Text="Notifications Frequency" FontSize="18" TextColor="#1DA1F2"/>
+            <Label Text="We will send you notifications about new kittens"/>
+            <Picker ItemsSource="{Binding NotificationFrequencies}" Title="Notifications Frequency" SelectedItem="{Binding SelectedNotificationFrequency}"
+                                       VerticalOptions="Center" WidthRequest="350" HorizontalOptions="Start" />
+        </StackLayout>
+        </Frame>
+        
+        <Frame>
+            <StackLayout>
+                <Label Text="About" FontSize="18" TextColor="#1DA1F2"/>
+                <Label Text="Pictures provided by thecatapi.com"/>
+                <Label Text="Created by Marko Lazic"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Version"/>
+                    <Label Text="{Binding Version}"></Label>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:BaseContentPage>

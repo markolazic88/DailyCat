@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+             xmlns:resources="clr-namespace:DailyCat.View.Resources;assembly=DailyCat.View"
+             xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
+             x:Class="DailyCat.View.Pages.BrowsePage"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=BrowsePageViewModel}"
+             Title="Browse"
+             BackgroundColor="#F5F8FA">
+
+    <pages:BaseContentPage.ToolbarItems>
+        <ToolbarItem Icon="{x:Static resources:Images.Refresh}" Order="Primary" Command="{Binding RefreshCommand}"></ToolbarItem>
+        <ToolbarItem Icon="{x:Static resources:Images.Share}" Order="Primary" Command="{Binding ShareCommand}"></ToolbarItem>
+        <ToolbarItem Icon="{x:Static resources:Images.Settings}" Order="Primary" Command="{Binding SettingsCommand}"></ToolbarItem>
+    </pages:BaseContentPage.ToolbarItems>
+
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <swipeCardView:SwipeCardView Grid.Row="0" Grid.Column="0" x:Name="SwipeCardView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            ItemsSource="{Binding Cats}"
+                            SwipedLeftCommand="{Binding SwipedLeftCommand}"
+                            SwipedRightCommand="{Binding SwipedRightCommand}"
+                            TopItem="{Binding TopCat}">
+            <swipeCardView:SwipeCardView.ItemTemplate>
+                <DataTemplate x:Name="CatTemplate">
+                    <Grid InputTransparent="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Source="{Binding ImageSource}" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Image>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Image Source="{x:Static resources:Images.Dislike}" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"></Image>
+                            <Label Text="{Binding DislikeCount}" FontSize="20" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Image Source="{x:Static resources:Images.Like}" WidthRequest="32" HeightRequest="32" VerticalOptions="Center"></Image>
+                            <Label Text="{Binding LikeCount}" FontSize="20" VerticalOptions="Center"></Label>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </swipeCardView:SwipeCardView.ItemTemplate>
+        </swipeCardView:SwipeCardView>
+        <ActivityIndicator Grid.Row="1" Grid.Column="0" IsRunning="{Binding IsBusy}"></ActivityIndicator>
+    </Grid>
+
+</pages:BaseContentPage>
