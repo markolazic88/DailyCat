@@ -3,8 +3,8 @@ High performance image gallery app implemented in Xamarin Forms.
 
 ## Features
 - Tinder-style SwipeCardView ([NuGet](www.nuget.org/packages/MLToolkit.Forms.SwipeCardView/), [GitHub](github.com/markolazic88/SwipeCardView))
-- Instagram-style ListView i GridView
-- Notifikacije korišćenjem Google FCM (Firebase Cloud Messaging) i Azure Functions
+- Instagram-style ListView and GridView
+- Notifications using Google FCM (Firebase Cloud Messaging)
 - Native Look & Feel (Android and iOS)
 
 <a href="https://play.google.com/store/apps/details?id=dailycat.droid" target="_blank"><img alt="" src="http://i66.tinypic.com/am2n9f.jpg" width="150"/></a>
