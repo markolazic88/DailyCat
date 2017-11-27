@@ -1,3 +1,55 @@
 {
-  // Your Firebase Cloud Messaging json downloaded from FCM project
+  "project_info": {
+    "project_number": "1111111111",
+    "firebase_url": "https://dailycat-xxxxx.firebaseio.com",
+    "project_id": "dailycat-xxxxx",
+    "storage_bucket": "dailycat-xxxxxx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1111111111:android:111111111111",
+        "android_client_info": {
+          "package_name": "dailycat.droid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1111111111-xxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dailycat.droid",
+            "certificate_hash": "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        },
+        {
+          "client_id": "11111111111-xxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "xxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx-xxxxx"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111111111111-xxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
 }
