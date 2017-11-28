@@ -131,8 +131,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MLToolkit.Forms.SwipeCardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MLToolkit.Forms.SwipeCardView.1.0.0\lib\portable-net45+wp80+win8+wpa81\MLToolkit.Forms.SwipeCardView.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\MLToolkit.Forms.SwipeCardView.1.1.0\lib\portable-net45+wp80+win8+wpa81\MLToolkit.Forms.SwipeCardView.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.91635\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
