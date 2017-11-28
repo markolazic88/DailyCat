@@ -4,7 +4,7 @@
              xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
              x:Class="DailyCat.View.Pages.SettingsPage"
              Title="Settings"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=SettingsPageViewModel}">
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=SettingsPageViewModel}">
     <StackLayout>
         <Frame>
         <StackLayout>

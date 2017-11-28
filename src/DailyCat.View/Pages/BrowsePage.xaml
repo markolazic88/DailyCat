@@ -5,7 +5,7 @@
              xmlns:resources="clr-namespace:DailyCat.View.Resources;assembly=DailyCat.View"
              xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
              x:Class="DailyCat.View.Pages.BrowsePage"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=BrowsePageViewModel}"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=BrowsePageViewModel}"
              Title="Browse"
              BackgroundColor="#F5F8FA">
 

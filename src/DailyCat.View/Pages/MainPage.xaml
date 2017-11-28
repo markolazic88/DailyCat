@@ -4,7 +4,7 @@
              x:Class="DailyCat.View.Pages.MainPage"
              xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
              Title="DailyCat"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}">
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainPageViewModel}">
     <pages:BrowsePage />
     <pages:LikedPage />
 </TabbedPage>

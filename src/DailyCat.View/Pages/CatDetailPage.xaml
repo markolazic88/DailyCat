@@ -4,7 +4,7 @@
              xmlns:resources="clr-namespace:DailyCat.View.Resources;assembly=DailyCat.View"
              xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
              x:Class="DailyCat.View.Pages.CatDetailPage"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=CatDetailPageViewModel}">
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=CatDetailPageViewModel}">
 
     <pages:BaseContentPage.ToolbarItems>
         <ToolbarItem Icon="{x:Static resources:Images.Share}" Order="Primary" Command="{Binding ShareCommand}"></ToolbarItem>

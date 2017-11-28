@@ -6,7 +6,7 @@
              xmlns:resources="clr-namespace:DailyCat.View.Resources;assembly=DailyCat.View"
              xmlns:pages="clr-namespace:DailyCat.View.Pages;assembly=DailyCat.View"
              x:Class="DailyCat.View.Pages.LikedPage"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=LikedPageViewModel}"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=LikedPageViewModel}"
              Title="Liked">
 
     <pages:BaseContentPage.Icon >
