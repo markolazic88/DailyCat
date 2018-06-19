@@ -165,7 +165,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\packages\LiveXAML.2.1.34\build\LiveXAML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LiveXAML.2.1.34\build\LiveXAML.targets'))" />
   </Target>
+  <Import Project="..\packages\LiveXAML.2.1.34\build\LiveXAML.targets" Condition="Exists('..\packages\LiveXAML.2.1.34\build\LiveXAML.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
