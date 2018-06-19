@@ -10,7 +10,7 @@
         {
             this.InitializeComponent();
 
-            if (Device.OS == TargetPlatform.iOS)
+            if (Device.RuntimePlatform == Device.iOS)
             {
                 this.Icon = new FileImageSource { File = Images.TabLiked };
             }
