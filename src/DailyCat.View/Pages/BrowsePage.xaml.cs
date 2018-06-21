@@ -23,5 +23,15 @@
                 this.Icon = new FileImageSource { File = Images.TabBrowse };
             }
         }
+
+        private void OnSwipeLeftClicked(object sender, EventArgs e)
+        {
+            this.SwipeCardView.InvokeSwipeLeft(50, 20);
+        }
+
+        private void OnSwipeRightClicked(object sender, EventArgs e)
+        {
+            this.SwipeCardView.InvokeSwipeRight(1000, 1);
+        }
     }
 }

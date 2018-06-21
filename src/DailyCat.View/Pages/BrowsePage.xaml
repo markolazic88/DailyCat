@@ -20,6 +20,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -55,7 +56,11 @@
                 </DataTemplate>
             </swipeCardView:SwipeCardView.ItemTemplate>
         </swipeCardView:SwipeCardView>
-        <ActivityIndicator Grid.Row="1" Grid.Column="0" IsRunning="{Binding IsBusy}"></ActivityIndicator>
+        <StackLayout Grid.Row="1" Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Swipe Left" Clicked="OnSwipeLeftClicked" />
+            <Button Text="Swipe Right" Clicked="OnSwipeRightClicked" />
+        </StackLayout>
+        <ActivityIndicator Grid.Row="2" Grid.Column="0" IsRunning="{Binding IsBusy}"></ActivityIndicator>
     </Grid>
 
 </pages:BaseContentPage>
